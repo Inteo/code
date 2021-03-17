@@ -1,0 +1,113 @@
+.button {
+   display: inline-flex;
+   @include center;
+   min-width: 195px;
+   height: 60px;
+   padding: 0 20px;
+   background-color: var(--color-yellow);
+   font-size: 16px;
+   line-height: 20px;
+   font-family: var(--font-title);
+   text-transform: uppercase;
+   color: var(--color-text);
+   border: none;
+   text-decoration: none;
+   cursor: pointer;
+   white-space: nowrap;
+   transition: .2s;
+
+   svg {
+      stroke: var(--color-text);
+      margin-right: 20px;
+   }
+
+   &:hover {
+      background-color: #fed249;
+      box-shadow: 0 5px 15px 0px rgba(253, 189, 64, 0.35);
+   }
+
+   &--full {
+      width: 100%;
+   }
+}
+
+.input {
+   width: 100%;
+   height: 60px;
+   display: block;
+   border-radius: 2px;
+   background: #FFFFFF;
+   border: none;
+   border-bottom: 2px solid #fff;
+   padding: 0 20px;
+   font-size: 16px;
+   transition: border-bottom-color .2s;
+
+   &:focus {
+      border-bottom-color: var(--color-yellow);
+   }
+
+   &-text {
+      font-size: 14px;
+      line-height: 18px;
+      color: #6D6D6D;
+      display: block;
+      margin-bottom: 5px;
+   }
+
+   &-group {
+      margin-bottom: 20px;
+   }
+
+   &-footer {
+      margin-top: 40px;
+   }
+
+   &.textarea {
+      height: 180px;
+      padding-top: 10px;
+   }
+}
+
+.checkbox {
+   position: absolute;
+   opacity: 0;
+
+   &:checked {
+      + .checkbox-label {
+         color: #000;
+
+         &:before {
+            background: var(--color-text) url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.13818 3.33878L3.99058 6.10937L9.13818 1.10938' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E%0A") 50% 50% no-repeat;
+            border-color: var(--color-text);
+         }
+      }
+   }
+
+   &-label {
+      display: block;
+      position: relative;
+      padding-left: 24px;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      color: #565656;
+
+      &:before {
+         content: '';
+         position: absolute;
+         width: 16px;
+         height: 16px;
+         border: 1px solid #909090;
+         border-radius: 3px;
+         left: 0;
+         top: 1px;
+      }
+   }
+}
+
+.select {
+   appearance: none;
+   -webkit-appearance: none;
+}

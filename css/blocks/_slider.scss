@@ -1,0 +1,99 @@
+.slider {
+   display: flex;
+   position: relative;
+   opacity: 0;
+   transition: opacity 1s ease;
+   
+   &--nav-top {
+      .owl-nav {
+         position: absolute;
+         right: 0;
+         top: -95px;
+         display: flex;
+
+         @include breakpoint(md) {
+            top: -75px
+         }
+      }
+      
+      .owl-nav-item {
+         position: relative;
+         margin-left: 20px;
+      }
+   }
+}
+
+.owl {
+   &-loaded {
+      opacity: 1;
+      display: block;
+   }
+
+   &-stage-outer {
+      position: relative;
+      overflow: hidden;
+   }
+
+   &-stage {
+      display: flex;
+   }
+
+   &-nav.disabled,
+   &-dots.disabled {
+      display: none;
+   }
+
+   &-nav {
+      &-item {
+         width: 50px;
+         height: 50px;
+         border: none;
+         cursor: pointer;
+         position: absolute;
+         background-color: var(--color-yellow);
+         display: flex;
+         z-index: 5;
+         transition: .2s;
+
+         svg {
+            margin: auto;
+            display: block;
+            stroke: var(--color-text);
+         }
+
+         &:hover {
+            background-color: #fed249;
+            box-shadow: 0 5px 15px 0px rgba(253, 189, 64, 0.35);
+         }
+      }
+   }
+
+   &-prev {
+      /**/
+   }
+
+   &-next {
+      /**/
+   }
+
+   &-dots {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+   }
+
+   &-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin: 0 5px;
+      border: none;
+      cursor: pointer;
+      background-color: #ccc;
+
+      &.active {
+         background-color: #ff0000;
+      }
+   }
+}
+

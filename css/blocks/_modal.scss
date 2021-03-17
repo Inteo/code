@@ -1,0 +1,87 @@
+.modal {
+   width: 100%;
+   max-width: 1042px;
+   padding: 80px 100px;
+   position: relative;
+   margin: auto;
+   background: #E7E7E7 url(../img/modal-logotype.svg) -235px -60px no-repeat;
+   display: none;
+   overflow: visible;
+
+   @include breakpoint(sm) {
+      padding: 30px 0;
+   }
+
+   &-main {
+      &-columns {
+         display: flex;
+         margin: 0 -60px;
+         flex-wrap: wrap;
+
+         @include breakpoint(md) {
+            flex-direction: column;
+            margin: 0;
+         }
+      }
+
+      &-column {
+         width: 50%;
+         padding: 0 60px;
+         display: flex;
+         flex-direction: column;
+
+         @include breakpoint(md) {
+            width: 100%;
+         }
+
+         @include breakpoint(sm) {
+            padding: 0 30px;
+         }
+      }
+
+      &-info {
+         margin-top: auto;
+         font-size: 14px;
+         line-height: 25px;
+         color: rgba(#1c1c1c, .5);
+
+         a {
+            color: rgba(#1c1c1c, .5);
+            text-decoration: underline;
+         }
+      }
+   }
+
+   &-close {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      right: -30px;
+      top: -30px;
+      cursor: pointer;
+      background-color: #E7E7E7;
+      display: flex;
+      transition: .2s;
+
+      @include breakpoint(md) {
+         right: 0;
+         top: 0;
+      }
+
+      svg {
+         stroke: var(--color-text);
+         margin: auto;
+      }
+
+      &:hover {
+         background-color: #fed249;
+         box-shadow: 0 5px 15px rgba(253, 189, 64, 0.35);
+      }
+   }
+
+   &-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+   }
+}
